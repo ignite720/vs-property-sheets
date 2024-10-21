@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ImportGroup Label="PropertySheets" />
+    
+    <PropertyGroup Label="UserMacros">
+        <AngleWin32BinDir Condition="'$(Platform)'=='Win32'">D:\dev2\angle\$(PlatformTarget)\lib</AngleWin32BinDir>
+        <AngleWin32BinDir Condition="'$(Platform)'=='x64'">D:\dev2\angle\$(PlatformTarget)\bin</AngleWin32BinDir>
+    </PropertyGroup>
+    
+    <PropertyGroup Label="UserMacros">
+        <AngleWin32Libs Condition="'$(PlatformTarget)'=='x86'">libEGL.lib;libGLESv2.lib</AngleWin32Libs>
+        <AngleWin32Libs Condition="'$(PlatformTarget)'=='x64'">libEGL.dll.lib;libGLESv2.dll.lib</AngleWin32Libs>
+    </PropertyGroup>
+    
+    <PropertyGroup>
+        <LocalDebuggerEnvironment>PATH=$(AngleWin32BinDir);$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('$(PATH)', '').Replace(';;', ';'))</LocalDebuggerEnvironment>
+    </PropertyGroup>
+    
+    <ItemDefinitionGroup>
+        <ClCompile>
+            <AdditionalIncludeDirectories>D:\dev2\angle\$(PlatformTarget)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+        </ClCompile>
+        <Link>
+            <AdditionalLibraryDirectories>D:\dev2\angle\$(PlatformTarget)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+            <AdditionalDependencies>$(AngleWin32Libs);%(AdditionalDependencies)</AdditionalDependencies>
+        </Link>
+    </ItemDefinitionGroup>
+    
+</Project>

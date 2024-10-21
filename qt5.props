@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ImportGroup Label="PropertySheets" />
+    
+    <PropertyGroup Label="UserMacros">
+        <Qt5Config Condition="'$(Configuration)'=='Debug'">d</Qt5Config>
+        <Qt5Config Condition="'$(Configuration)'=='Release'"></Qt5Config>
+    </PropertyGroup>
+    
+    <PropertyGroup>
+        <LocalDebuggerEnvironment>PATH=D:\dev2\qt-5.15.2\bin;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('$(PATH)', '').Replace(';;', ';'))</LocalDebuggerEnvironment>
+    </PropertyGroup>
+    
+    <ItemDefinitionGroup>
+        <ClCompile>
+            <AdditionalIncludeDirectories>D:\dev2\qt-5.15.2\include;D:\dev2\qt-5.15.2\include\QtCore;D:\dev2\qt-5.15.2\include\QtGui;D:\dev2\qt-5.15.2\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+        </ClCompile>
+        <Link>
+            <AdditionalLibraryDirectories>D:\dev2\qt-5.15.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+            <AdditionalDependencies>
+                Qt5Core$(Qt5Config).lib;
+                Qt5Gui$(Qt5Config).lib;
+                Qt5Widgets$(Qt5Config).lib;
+                %(AdditionalDependencies)
+            </AdditionalDependencies>
+        </Link>
+    </ItemDefinitionGroup>
+    
+</Project>

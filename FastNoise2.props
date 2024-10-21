@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ImportGroup Label="PropertySheets" />
+    
+    <PropertyGroup Label="UserMacros">
+        <FastNoise2Config Condition="'$(Configuration)'=='Debug'">D</FastNoise2Config>
+        <FastNoise2Config Condition="'$(Configuration)'=='Release'"></FastNoise2Config>
+    </PropertyGroup>
+    
+    <PropertyGroup Label="UserMacros">
+        <FastNoise2Platform Condition="'$(Platform)'=='Win32'">win32</FastNoise2Platform>
+        <FastNoise2Platform Condition="'$(Platform)'=='x64'">win64</FastNoise2Platform>
+    </PropertyGroup>
+    
+    <PropertyGroup>
+        <LocalDebuggerEnvironment>PATH=D:\dev2\FastNoise2\$(FastNoise2Platform)\bin;$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('$(PATH)', '').Replace(';;', ';'))</LocalDebuggerEnvironment>
+    </PropertyGroup>
+    
+    <ItemDefinitionGroup>
+        <ClCompile>
+            <AdditionalIncludeDirectories>D:\dev2\FastNoise2\$(FastNoise2Platform)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+        </ClCompile>
+        <Link>
+            <AdditionalLibraryDirectories>D:\dev2\FastNoise2\$(FastNoise2Platform)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+            <AdditionalDependencies>
+                FastNoise$(FastNoise2Config).lib;
+                %(AdditionalDependencies)
+            </AdditionalDependencies>
+        </Link>
+    </ItemDefinitionGroup>
+    
+</Project>

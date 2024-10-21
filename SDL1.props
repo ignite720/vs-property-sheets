@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ImportGroup Label="PropertySheets" />
+    
+    <PropertyGroup Label="UserMacros">
+        <SDL1Platform Condition="'$(Platform)'=='Win32'">x86</SDL1Platform>
+        <SDL1Platform Condition="'$(Platform)'=='x64'">x64</SDL1Platform>
+    </PropertyGroup>
+    
+    <PropertyGroup>
+        <ThisLibDllDir>D:\dev2\SDL1\SDL-1.2.15\lib\$(SDL1Platform);D:\dev2\SDL1\SDL_image-1.2.12\lib\$(SDL1Platform);D:\dev2\SDL1\SDL_mixer-1.2.12\lib\$(SDL1Platform);D:\dev2\SDL1\SDL_net-1.2.8\lib\$(SDL1Platform);D:\dev2\SDL1\SDL_ttf-2.0.11\lib\$(SDL1Platform);</ThisLibDllDir>
+        <LocalDebuggerEnvironment>PATH=$(ThisLibDllDir);$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('$(PATH)', '').Replace(';;', ';'))</LocalDebuggerEnvironment>
+    </PropertyGroup>
+    
+    <ItemDefinitionGroup>
+        <ClCompile>
+            <AdditionalIncludeDirectories>
+                D:\dev2\SDL1\SDL-1.2.15\include;
+                D:\dev2\SDL1\SDL_image-1.2.12\include;
+                D:\dev2\SDL1\SDL_mixer-1.2.12\include;
+                D:\dev2\SDL1\SDL_net-1.2.8\include;
+                D:\dev2\SDL1\SDL_ttf-2.0.11\include;
+                %(AdditionalIncludeDirectories)
+            </AdditionalIncludeDirectories>
+        </ClCompile>
+        <Link>
+            <AdditionalLibraryDirectories>
+                D:\dev2\SDL1\SDL-1.2.15\lib\$(SDL1Platform);
+                D:\dev2\SDL1\SDL_image-1.2.12\lib\$(SDL1Platform);
+                D:\dev2\SDL1\SDL_mixer-1.2.12\lib\$(SDL1Platform);
+                D:\dev2\SDL1\SDL_net-1.2.8\lib\$(SDL1Platform);
+                D:\dev2\SDL1\SDL_ttf-2.0.11\lib\$(SDL1Platform);
+                %(AdditionalLibraryDirectories)
+            </AdditionalLibraryDirectories>
+            
+            <!--
+            <AdditionalDependencies>SDL.lib;SDLmain.lib;SDL_image.lib;SDL_mixer.lib;SDL_net.lib;SDL_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+            -->
+            
+            <!--
+            #ifdef _WIN32
+            extern "C" { FILE __iob_func[3] = { *stdin, *stdout, *stderr }; }
+            #endif
+            -->
+            
+            <AdditionalDependencies>
+                legacy_stdio_definitions.lib;
+                SDL.lib;
+                SDLmain.lib;
+                SDL_image.lib;
+                SDL_mixer.lib;
+                SDL_net.lib;
+                SDL_ttf.lib;
+                %(AdditionalDependencies)
+            </AdditionalDependencies>
+        </Link>
+    </ItemDefinitionGroup>
+    
+</Project>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ImportGroup Label="PropertySheets" />
+    
+    <PropertyGroup>
+        <LocalDebuggerEnvironment>PATH=D:\dev2\FW1FontWrapper_1_1\$(PlatformTarget);$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('$(PATH)', '').Replace(';;', ';'))</LocalDebuggerEnvironment>
+    </PropertyGroup>
+    
+    <ItemDefinitionGroup>
+        <ClCompile>
+            <AdditionalIncludeDirectories>D:\dev2\FW1FontWrapper_1_1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+        </ClCompile>
+        <Link>
+            <AdditionalLibraryDirectories>D:\dev2\FW1FontWrapper_1_1\$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+            <AdditionalDependencies>
+                FW1FontWrapper.lib;
+                %(AdditionalDependencies)
+            </AdditionalDependencies>
+        </Link>
+    </ItemDefinitionGroup>
+    
+</Project>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ImportGroup Label="PropertySheets" />
+    
+    <PropertyGroup>
+        <LocalDebuggerEnvironment>PATH=D:\dev2\PhysX-5.4.1\bin\win.x86_64.vc143.md\$(Configuration);$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('$(PATH)', '').Replace(';;', ';'))</LocalDebuggerEnvironment>
+    </PropertyGroup>
+    
+    <ItemDefinitionGroup>
+        <ClCompile>
+            <AdditionalIncludeDirectories>D:\dev2\PhysX-5.4.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+        </ClCompile>
+        <Link>
+            <AdditionalLibraryDirectories>D:\dev2\PhysX-5.4.1\bin\win.x86_64.vc143.md\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+            <AdditionalDependencies>
+                PhysX_64.lib;
+                PhysXCharacterKinematic_static_64.lib;
+                PhysXCommon_64.lib;
+                PhysXCooking_64.lib;
+                PhysXExtensions_static_64.lib;
+                PhysXFoundation_64.lib;
+                PhysXPvdSDK_static_64.lib;
+                PhysXTask_static_64.lib;
+                PhysXVehicle_static_64.lib;
+                PhysXVehicle2_static_64.lib;
+                %(AdditionalDependencies)
+            </AdditionalDependencies>
+        </Link>
+    </ItemDefinitionGroup>
+    
+</Project>

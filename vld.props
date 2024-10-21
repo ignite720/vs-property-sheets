@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ImportGroup Label="PropertySheets" />
+    
+    <PropertyGroup Label="UserMacros">
+        <MyPlatform Condition="'$(Platform)'=='Win32'">Win32</MyPlatform>
+        <MyPlatform Condition="'$(Platform)'=='x64'">Win64</MyPlatform>
+    </PropertyGroup>
+    
+    <PropertyGroup>
+        <LocalDebuggerEnvironment>PATH=D:\dev2\vld-2.5.1\bin\$(MyPlatform);$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('$(PATH)', '').Replace(';;', ';'))</LocalDebuggerEnvironment>
+    </PropertyGroup>
+    
+    <ItemDefinitionGroup>
+        <ClCompile>
+            <AdditionalIncludeDirectories>D:\dev2\vld-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+        </ClCompile>
+        <Link>
+            <AdditionalLibraryDirectories>D:\dev2\vld-2.5.1\lib\$(MyPlatform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+            <AdditionalDependencies>
+                vld.lib;
+                %(AdditionalDependencies)
+            </AdditionalDependencies>
+        </Link>
+    </ItemDefinitionGroup>
+    
+</Project>

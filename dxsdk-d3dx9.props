@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ImportGroup Label="PropertySheets" />
+    
+    <PropertyGroup Label="UserMacros">
+        <DxsdkD3dx9Config Condition="'$(Configuration)'=='Debug'">d</DxsdkD3dx9Config>
+        <DxsdkD3dx9Config Condition="'$(Configuration)'!='Debug'"></DxsdkD3dx9Config>
+    </PropertyGroup>
+    
+    <PropertyGroup>
+        <LocalDebuggerEnvironment>PATH=D:\dev2\dxsdk-d3dx-9.29.952.8\$(Configuration)\bin\$(PlatformTarget);$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('$(PATH)', '').Replace(';;', ';'))</LocalDebuggerEnvironment>
+    </PropertyGroup>
+    
+    <ItemDefinitionGroup>
+        <ClCompile>
+            <AdditionalIncludeDirectories>D:\dev2\dxsdk-d3dx-9.29.952.8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+        </ClCompile>
+        <Link>
+            <AdditionalLibraryDirectories>D:\dev2\dxsdk-d3dx-9.29.952.8\$(Configuration)\lib\$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+            <AdditionalDependencies>d3d9.lib;d3dx9$(DxsdkD3dx9Config).lib;d3dx10$(DxsdkD3dx9Config).lib;dinput8.lib;dxguid.lib;comctl32.lib;Winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+        </Link>
+    </ItemDefinitionGroup>
+    
+</Project>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ImportGroup Label="PropertySheets" />
+    
+    <ItemDefinitionGroup>
+        <ClCompile>
+            <AdditionalIncludeDirectories>D:\dev2\OpenAL-UWP\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+        </ClCompile>
+        <Link>
+            <AdditionalLibraryDirectories>D:\dev2\OpenAL-UWP\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+            <AdditionalDependencies>OpenAL.lib;%(AdditionalDependencies)</AdditionalDependencies>
+        </Link>
+    </ItemDefinitionGroup>
+    
+    <!--
+    1. add to $(ProjectName).vcxproj
+    <ItemGroup>
+        <None Include="D:\dev2\OpenAL-UWP\lib\$(Platform)\OpenAL.dll">
+            <DeploymentContent>true</DeploymentContent>
+        </None>
+    </ItemGroup>
+    -->
+    
+    <!--
+    2. add to $(ProjectName).vcxproj.filters(for filter)
+    <ItemGroup>
+        <None Include="D:\dev2\OpenAL-UWP\lib\$(Platform)\OpenAL.dll" />
+    </ItemGroup>
+    -->
+    
+</Project>

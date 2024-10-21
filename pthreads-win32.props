@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ImportGroup Label="PropertySheets" />
+    
+    <PropertyGroup Label="UserMacros">
+        <MyPF Condition="'$(Platform)'=='Win32'">x86</MyPF>
+        <MyPF Condition="'$(Platform)'=='x64'">x64</MyPF>
+    </PropertyGroup>
+    
+    <PropertyGroup>
+        <ThisLibraryDllPath>D:\dev2\pthreads-win32-2.9.1\dll\$(MyPF);</ThisLibraryDllPath>
+        <LocalDebuggerEnvironment>$(ThisLibraryDllPath)$(LocalDebuggerEnvironment)</LocalDebuggerEnvironment>
+    </PropertyGroup>
+    
+    <ItemDefinitionGroup>
+        <ClCompile>
+            <PreprocessorDefinitions>HAVE_STRUCT_TIMESPEC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+            <AdditionalIncludeDirectories>D:\dev2\pthreads-win32-2.9.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+        </ClCompile>
+        <Link>
+            <AdditionalLibraryDirectories>D:\dev2\pthreads-win32-2.9.1\lib\$(MyPF);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+            <AdditionalDependencies>pthreadVC2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+        </Link>
+    </ItemDefinitionGroup>
+    
+</Project>
