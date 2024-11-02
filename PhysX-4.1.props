@@ -2,6 +2,11 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <ImportGroup Label="PropertySheets" />
     
+    <PropertyGroup Label="UserMacros">
+        <PhysX41PlatformTarget Condition="'$(Platform)'=='Win32'">32</PhysX41PlatformTarget>
+        <PhysX41PlatformTarget Condition="'$(Platform)'=='x64'">64</PhysX41PlatformTarget>
+    </PropertyGroup>
+    
     <PropertyGroup>
         <LocalDebuggerEnvironment>PATH=D:\dev2\PhysX.4.1.229882250\bin\$(Configuration);$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('$(PATH)', '').Replace(';;', ';'))</LocalDebuggerEnvironment>
     </PropertyGroup>
@@ -13,20 +18,20 @@
         <Link>
             <AdditionalLibraryDirectories>D:\dev2\PhysX.4.1.229882250\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
             <AdditionalDependencies>
-                LowLevelAABB_static_64.lib;
-                LowLevelDynamics_static_64.lib;
-                LowLevel_static_64.lib;
-                PhysXCharacterKinematic_static_64.lib;
-                PhysXCommon_64.lib;
-                PhysXCooking_64.lib;
-                PhysXExtensions_static_64.lib;
-                PhysXFoundation_64.lib;
-                PhysXPvdSDK_static_64.lib;
-                PhysXTask_static_64.lib;
-                PhysXVehicle_static_64.lib;
-                PhysX_64.lib;
-                SceneQuery_static_64.lib;
-                SimulationController_static_64.lib;
+                LowLevelAABB_static_$(PhysX41PlatformTarget).lib;
+                LowLevelDynamics_static_$(PhysX41PlatformTarget).lib;
+                LowLevel_static_$(PhysX41PlatformTarget).lib;
+                PhysXCharacterKinematic_static_$(PhysX41PlatformTarget).lib;
+                PhysXCommon_$(PhysX41PlatformTarget).lib;
+                PhysXCooking_$(PhysX41PlatformTarget).lib;
+                PhysXExtensions_static_$(PhysX41PlatformTarget).lib;
+                PhysXFoundation_$(PhysX41PlatformTarget).lib;
+                PhysXPvdSDK_static_$(PhysX41PlatformTarget).lib;
+                PhysXTask_static_$(PhysX41PlatformTarget).lib;
+                PhysXVehicle_static_$(PhysX41PlatformTarget).lib;
+                PhysX_$(PhysX41PlatformTarget).lib;
+                SceneQuery_static_$(PhysX41PlatformTarget).lib;
+                SimulationController_static_$(PhysX41PlatformTarget).lib;
                 %(AdditionalDependencies)
             </AdditionalDependencies>
         </Link>

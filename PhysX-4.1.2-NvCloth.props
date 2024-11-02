@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ImportGroup Label="PropertySheets" />
+    
+    <PropertyGroup Label="UserMacros">
+        <PhysX412Config Condition="'$(Configuration)'=='Debug'">DEBUG</PhysX412Config>
+        <PhysX412Config Condition="'$(Configuration)'=='Release'"></PhysX412Config>
+    </PropertyGroup>
+    
+    <PropertyGroup Label="UserMacros">
+        <PhysX412PlatformTarget Condition="'$(Platform)'=='Win32'">32</PhysX412PlatformTarget>
+        <PhysX412PlatformTarget Condition="'$(Platform)'=='x64'">64</PhysX412PlatformTarget>
+    </PropertyGroup>
+    
+    <PropertyGroup>
+        <ThisLibDllDir>D:\dev2\PhysX-4.1.2-NvCloth\NvCloth\lib;D:\dev2\PhysX-4.1.2-NvCloth\physx\$(Configuration);</ThisLibDllDir>
+        <LocalDebuggerEnvironment>PATH=$(ThisLibDllDir);$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('$(PATH)', '').Replace(';;', ';'))</LocalDebuggerEnvironment>
+    </PropertyGroup>
+    
+    <ItemDefinitionGroup>
+        <ClCompile>
+            <AdditionalIncludeDirectories>
+                D:\dev2\PhysX-4.1.2-NvCloth\NvCloth\extensions\include;
+                D:\dev2\PhysX-4.1.2-NvCloth\NvCloth\include;
+                D:\dev2\PhysX-4.1.2-NvCloth\physx\include;
+                D:\dev2\PhysX-4.1.2-NvCloth\physx\source\foundation\include;
+                D:\dev2\PhysX-4.1.2-NvCloth\physx\source\physxextensions\src;
+                D:\dev2\PhysX-4.1.2-NvCloth\pxshared\include;
+                D:\dev2\PhysX-4.1.2-NvCloth\pxshared\include\foundation;
+                D:\dev2\PhysX-4.1.2-NvCloth\pxshared\src\foundation\include;
+                %(AdditionalIncludeDirectories)
+            </AdditionalIncludeDirectories>
+        </ClCompile>
+        <Link>
+            <AdditionalLibraryDirectories>D:\dev2\PhysX-4.1.2-NvCloth\NvCloth\lib;D:\dev2\PhysX-4.1.2-NvCloth\physx\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+            <AdditionalDependencies>
+                NvCloth$(PhysX412Config)_$(PlatformTarget).lib;
+                LowLevelAABB_static_$(PhysX412PlatformTarget).lib;
+                LowLevelDynamics_static_$(PhysX412PlatformTarget).lib;
+                LowLevel_static_$(PhysX412PlatformTarget).lib;
+                PhysXCharacterKinematic_static_$(PhysX412PlatformTarget).lib;
+                PhysXCommon_$(PhysX412PlatformTarget).lib;
+                PhysXCooking_$(PhysX412PlatformTarget).lib;
+                PhysXExtensions_static_$(PhysX412PlatformTarget).lib;
+                PhysXFoundation_$(PhysX412PlatformTarget).lib;
+                PhysXPvdSDK_static_$(PhysX412PlatformTarget).lib;
+                PhysXTask_static_$(PhysX412PlatformTarget).lib;
+                PhysXVehicle_static_$(PhysX412PlatformTarget).lib;
+                PhysX_$(PhysX412PlatformTarget).lib;
+                SceneQuery_static_$(PhysX412PlatformTarget).lib;
+                SimulationController_static_$(PhysX412PlatformTarget).lib;
+                %(AdditionalDependencies)
+            </AdditionalDependencies>
+        </Link>
+    </ItemDefinitionGroup>
+    
+</Project>
