@@ -2,8 +2,13 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <ImportGroup Label="PropertySheets" />
     
+    <PropertyGroup Label="UserMacros">
+        <PhysX541PlatformName Condition="'$(Platform)'=='Win32'">x86</PhysX541PlatformName>
+        <PhysX541PlatformName Condition="'$(Platform)'=='x64'">x86_64</PhysX541PlatformName>
+    </PropertyGroup>
+    
     <PropertyGroup>
-        <LocalDebuggerEnvironment>PATH=D:\dev2\PhysX-5.4.1\bin\win.x86_64.vc143.md\$(Configuration);$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('$(PATH)', '').Replace(';;', ';'))</LocalDebuggerEnvironment>
+        <LocalDebuggerEnvironment>PATH=D:\dev2\PhysX-5.4.1\bin\win.$(PhysX541PlatformName).vc143.md\$(Configuration);$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('$(PATH)', '').Replace(';;', ';'))</LocalDebuggerEnvironment>
     </PropertyGroup>
     
     <ItemDefinitionGroup>
@@ -11,18 +16,18 @@
             <AdditionalIncludeDirectories>D:\dev2\PhysX-5.4.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
         </ClCompile>
         <Link>
-            <AdditionalLibraryDirectories>D:\dev2\PhysX-5.4.1\bin\win.x86_64.vc143.md\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+            <AdditionalLibraryDirectories>D:\dev2\PhysX-5.4.1\bin\win.$(PhysX541PlatformName).vc143.md\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
             <AdditionalDependencies>
-                PhysX_64.lib;
-                PhysXCharacterKinematic_static_64.lib;
-                PhysXCommon_64.lib;
-                PhysXCooking_64.lib;
-                PhysXExtensions_static_64.lib;
-                PhysXFoundation_64.lib;
-                PhysXPvdSDK_static_64.lib;
-                PhysXTask_static_64.lib;
-                PhysXVehicle_static_64.lib;
-                PhysXVehicle2_static_64.lib;
+                PhysX_$(PlatformArchitecture).lib;
+                PhysXCharacterKinematic_static_$(PlatformArchitecture).lib;
+                PhysXCommon_$(PlatformArchitecture).lib;
+                PhysXCooking_$(PlatformArchitecture).lib;
+                PhysXExtensions_static_$(PlatformArchitecture).lib;
+                PhysXFoundation_$(PlatformArchitecture).lib;
+                PhysXPvdSDK_static_$(PlatformArchitecture).lib;
+                PhysXTask_static_$(PlatformArchitecture).lib;
+                PhysXVehicle_static_$(PlatformArchitecture).lib;
+                PhysXVehicle2_static_$(PlatformArchitecture).lib;
                 %(AdditionalDependencies)
             </AdditionalDependencies>
         </Link>
