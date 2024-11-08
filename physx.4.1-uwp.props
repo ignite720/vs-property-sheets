@@ -13,20 +13,20 @@
         <Link>
             <AdditionalLibraryDirectories>D:\dev2\physx.4.1-uwp\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
             <AdditionalDependencies>
-                LowLevelAABB_static_64.lib;
-                LowLevelDynamics_static_64.lib;
-                LowLevel_static_64.lib;
-                PhysXCharacterKinematic_static_64.lib;
-                PhysXCommon_64.lib;
-                PhysXCooking_64.lib;
-                PhysXExtensions_static_64.lib;
-                PhysXFoundation_64.lib;
-                PhysXPvdSDK_static_64.lib;
-                PhysXTask_static_64.lib;
-                PhysXVehicle_static_64.lib;
-                PhysX_64.lib;
-                SceneQuery_static_64.lib;
-                SimulationController_static_64.lib;
+                LowLevelAABB_static_$(PlatformArchitecture).lib;
+                LowLevelDynamics_static_$(PlatformArchitecture).lib;
+                LowLevel_static_$(PlatformArchitecture).lib;
+                PhysXCharacterKinematic_static_$(PlatformArchitecture).lib;
+                PhysXCommon_$(PlatformArchitecture).lib;
+                PhysXCooking_$(PlatformArchitecture).lib;
+                PhysXExtensions_static_$(PlatformArchitecture).lib;
+                PhysXFoundation_$(PlatformArchitecture).lib;
+                PhysXPvdSDK_static_$(PlatformArchitecture).lib;
+                PhysXTask_static_$(PlatformArchitecture).lib;
+                PhysXVehicle_static_$(PlatformArchitecture).lib;
+                PhysX_$(PlatformArchitecture).lib;
+                SceneQuery_static_$(PlatformArchitecture).lib;
+                SimulationController_static_$(PlatformArchitecture).lib;
                 %(AdditionalDependencies)
             </AdditionalDependencies>
         </Link>
