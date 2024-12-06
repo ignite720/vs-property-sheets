@@ -5,7 +5,7 @@
     <ItemDefinitionGroup>
         <ClCompile>
             <PreprocessorDefinitions>_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-            <AdditionalIncludeDirectories>D:\dev2\TemplateHeaderonly\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+            <AdditionalIncludeDirectories>D:\dev2\rtm-2.3.1\includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
         </ClCompile>
     </ItemDefinitionGroup>
     
