@@ -2,6 +2,11 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <ImportGroup Label="PropertySheets" />
     
+    <PropertyGroup Label="UserMacros">
+        <LibPngConfig Condition="'$(Configuration)'=='Debug'">d</LibPngConfig>
+        <LibPngConfig Condition="'$(Configuration)'!='Debug'"></LibPngConfig>
+    </PropertyGroup>
+    
     <ItemDefinitionGroup>
         <ClCompile>
             <AdditionalIncludeDirectories>D:\dev2\libpng\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -9,7 +14,7 @@
         <Link>
             <AdditionalLibraryDirectories>D:\dev2\libpng\lib_$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
             <AdditionalDependencies>
-                libpng16_static.lib;
+                libpng16_static$(LibPngConfig).lib;
                 %(AdditionalDependencies)
             </AdditionalDependencies>
         </Link>
