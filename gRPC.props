@@ -3,8 +3,8 @@
     <ImportGroup Label="PropertySheets" />
     
     <PropertyGroup Label="UserMacros">
-        <MyDebug Condition="'$(Configuration)'=='Debug'">d</MyDebug>
-        <MyDebug Condition="'$(Configuration)'!='Debug'"></MyDebug>
+        <GRpcConfig Condition="'$(Configuration)'=='Debug'">d</GRpcConfig>
+        <GRpcConfig Condition="'$(Configuration)'!='Debug'"></GRpcConfig>
     </PropertyGroup>
     
     <ItemDefinitionGroup>
@@ -83,7 +83,7 @@
                 re2.lib;
                 ssl.lib;
                 crypto.lib;
-                zlibstatic$(MyDebug).lib;
+                zlibstatic$(GRpcConfig).lib;
                 address_sorting.lib;
                 gpr.lib;
                 grpc.lib;
@@ -97,8 +97,8 @@
                 grpc_plugin_support.lib;
                 grpcpp_channelz.lib;
                 upb.lib;
-                libprotobuf$(MyDebug).lib;
-                libprotoc$(MyDebug).lib;
+                libprotobuf$(GRpcConfig).lib;
+                libprotoc$(GRpcConfig).lib;
                 %(AdditionalDependencies)
             </AdditionalDependencies>
         </Link>

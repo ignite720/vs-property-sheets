@@ -3,8 +3,8 @@
     <ImportGroup Label="PropertySheets" />
     
     <PropertyGroup Label="UserMacros">
-        <MyDebug Condition="'$(Configuration)'=='Debug'">d</MyDebug>
-        <MyDebug Condition="'$(Configuration)'!='Debug'"></MyDebug>
+        <Protobuf3194Config Condition="'$(Configuration)'=='Debug'">d</Protobuf3194Config>
+        <Protobuf3194Config Condition="'$(Configuration)'!='Debug'"></Protobuf3194Config>
     </PropertyGroup>
     
     <ItemDefinitionGroup>
@@ -14,7 +14,7 @@
         <Link>
             <AdditionalLibraryDirectories>D:\dev2\gRPC-v1.48.0\lib\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
             <AdditionalDependencies>
-                libprotobuf$(MyDebug).lib;
+                libprotobuf$(Protobuf3194Config).lib;
                 %(AdditionalDependencies)
             </AdditionalDependencies>
         </Link>
