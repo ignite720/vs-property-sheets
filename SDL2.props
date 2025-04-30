@@ -8,7 +8,7 @@
     </PropertyGroup>
     
     <PropertyGroup>
-        <ThisLibDllDir>D:\dev2\SDL2\SDL2-2.28.2\lib\$(SDL2Platform);D:\dev2\SDL2\SDL2_image-2.0.3\lib\$(SDL2Platform);D:\dev2\SDL2\SDL2_mixer-2.0.2\lib\$(SDL2Platform);D:\dev2\SDL2\SDL2_net-2.0.1\lib\$(SDL2Platform);D:\dev2\SDL2\SDL2_ttf-2.0.14\lib\$(SDL2Platform);</ThisLibDllDir>
+        <ThisLibDllDir>D:\dev2\SDL2\SDL2-2.32.4\lib\$(SDL2Platform);D:\dev2\SDL2\SDL2_image-2.8.8\lib\$(SDL2Platform);D:\dev2\SDL2\SDL2_mixer-2.8.1\lib\$(SDL2Platform);D:\dev2\SDL2\SDL2_net-2.2.0\lib\$(SDL2Platform);D:\dev2\SDL2\SDL2_ttf-2.24.0\lib\$(SDL2Platform);</ThisLibDllDir>
         <LocalDebuggerEnvironment>PATH=$(ThisLibDllDir);$(LocalDebuggerEnvironment.Replace('PATH=', '').Replace('$(PATH)', '').Replace(';;', ';'))</LocalDebuggerEnvironment>
     </PropertyGroup>
     
@@ -20,21 +20,21 @@
     <ItemDefinitionGroup>
         <ClCompile>
             <AdditionalIncludeDirectories>
-                D:\dev2\SDL2\SDL2-2.28.2\include;
-                D:\dev2\SDL2\SDL2_image-2.0.3\include;
-                D:\dev2\SDL2\SDL2_mixer-2.0.2\include;
-                D:\dev2\SDL2\SDL2_net-2.0.1\include;
-                D:\dev2\SDL2\SDL2_ttf-2.0.14\include;
+                D:\dev2\SDL2\SDL2-2.32.4\include;
+                D:\dev2\SDL2\SDL2_image-2.8.8\include;
+                D:\dev2\SDL2\SDL2_mixer-2.8.1\include;
+                D:\dev2\SDL2\SDL2_net-2.2.0\include;
+                D:\dev2\SDL2\SDL2_ttf-2.24.0\include;
                 %(AdditionalIncludeDirectories)
             </AdditionalIncludeDirectories>
         </ClCompile>
         <Link>
             <AdditionalLibraryDirectories>
-                D:\dev2\SDL2\SDL2-2.28.2\lib\$(SDL2Platform);
-                D:\dev2\SDL2\SDL2_image-2.0.3\lib\$(SDL2Platform);
-                D:\dev2\SDL2\SDL2_mixer-2.0.2\lib\$(SDL2Platform);
-                D:\dev2\SDL2\SDL2_net-2.0.1\lib\$(SDL2Platform);
-                D:\dev2\SDL2\SDL2_ttf-2.0.14\lib\$(SDL2Platform);
+                D:\dev2\SDL2\SDL2-2.32.4\lib\$(SDL2Platform);
+                D:\dev2\SDL2\SDL2_image-2.8.8\lib\$(SDL2Platform);
+                D:\dev2\SDL2\SDL2_mixer-2.8.1\lib\$(SDL2Platform);
+                D:\dev2\SDL2\SDL2_net-2.2.0\lib\$(SDL2Platform);
+                D:\dev2\SDL2\SDL2_ttf-2.24.0\lib\$(SDL2Platform);
                 %(AdditionalLibraryDirectories)
             </AdditionalLibraryDirectories>
             <AdditionalDependencies>
