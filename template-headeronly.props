@@ -6,6 +6,7 @@
         <ClCompile>
             <PreprocessorDefinitions>_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
             <AdditionalIncludeDirectories>D:\dev2\TemplateHeaderonly\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+            <AdditionalOptions>/wd4005 /wd4819 %(AdditionalOptions)</AdditionalOptions>
         </ClCompile>
     </ItemDefinitionGroup>
     

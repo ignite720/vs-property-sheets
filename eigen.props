@@ -6,7 +6,7 @@
         <ClCompile>
             <PreprocessorDefinitions>_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS;EIGEN_MPL2_ONLY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
             <AdditionalIncludeDirectories>D:\dev2\eigen-3.4.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-            <AdditionalOptions>/wd4819 %(AdditionalOptions)</AdditionalOptions>
+            <AdditionalOptions>/wd4005 /wd4819 %(AdditionalOptions)</AdditionalOptions>
         </ClCompile>
     </ItemDefinitionGroup>
     
